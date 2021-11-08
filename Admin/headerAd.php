@@ -24,10 +24,7 @@
     <link href="../assets/css/header.css" rel="stylesheet" />
     <link href="../assets/css/home.css" rel="stylesheet" />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Owl caroucel Js-->
-    <script src="../assets/owlCarousel/owl.carousel.min.js"></script>
-
+   
 </head>
 
 <body>
@@ -84,13 +81,16 @@
                     </ul>
                 </li>
                 <li class="header__nav-item index">
-                    <a href="admin.php" class="header__nav-link">Danh Sách Thực Đơn</a>
+                    <a href="/Quan_Ly_TS/Admin/admin.php" class="header__nav-link">Danh Sách Thực Đơn</a>
                 </li>
                 <li class="header__nav-item">
-                    <a href="dsnhanvien.php" class="header__nav-link">Danh Sách Nhân Viên</a>
+                    <a href="/Quan_Ly_TS/Admin/dsnhanvien.php" class="header__nav-link">Danh Sách Nhân Viên</a>
                 </li>
                 <li class="header__nav-item">
-                    <a href="dsnguoidung.php" class="header__nav-link">Danh Sách Người Dùng</a>
+                    <a href="/Quan_Ly_TS/Admin/dsnguoidung.php" class="header__nav-link">Danh Sách Khách Hàng</a>
+                </li>
+                <li class="header__nav-item">
+                    <a href="/Quan_Ly_TS/BaiTap/exercise.php" class="header__nav-link">BÀI TẬP</a>
                 </li>
             </ul>
         </div>
@@ -154,5 +154,8 @@
     </div>
     <!-- ---Admin--- -->
 </body>
-
+    <script src="../assets/js/commonscript.js"></script>
+    <script src="../bootstrap-4.6.0-dist/js/jquery.js"></script>
+    <script src="../bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <script src="../bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
 </html>

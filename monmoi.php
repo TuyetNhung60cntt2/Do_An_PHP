@@ -44,7 +44,7 @@
                         if ($loaimonmoi) {
                             while ($row = $loaimonmoi->fetch_assoc()) {
                             echo "<div class='col-12-col-md-12 col-lg-4 text-center' style='font-size: 2rem; color: #b81f32;'>
-                                        <img style='max-width: 100%;' src='./assets/img/menu/MonMoi/".$row['HinhAnh']."' alt=''>
+                                        <img style='max-width: 100%;' src='./assets/img/menu/".$row['HinhAnh']."' alt=''>
                                         <div >" .$row['TenSP']."</div>
                                         <div class='d-flex justify-content-center' >
                                             <div>Size : " .$row['Size']."</div>
@@ -68,7 +68,7 @@
                         if ($loaimonmoi1) {
                             while ($row = $loaimonmoi1->fetch_assoc()) {
                             echo "<div class='col-12-col-md-12 col-lg-4 text-center' style='font-size: 2rem; color: #b81f32;'>
-                                        <img style='max-width: 100%;' src='./assets/img/menu/MonMoi/".$row['HinhAnh']."' alt=''>
+                                        <img style='max-width: 100%;' src='./assets/img/menu/".$row['HinhAnh']."' alt=''>
                                         <div >" .$row['TenSP']."</div>
                                         <div class='d-flex justify-content-center' >
                                             <div>Size : " .$row['Size']."</div>
@@ -93,7 +93,7 @@
                         if ($loaimonmoi2) {
                             while ($row = $loaimonmoi2->fetch_assoc()) {
                             echo "<div class='col-12-col-md-12 col-lg-4 text-center' style='font-size: 2rem; color: #b81f32;'>
-                                        <img style='max-width: 100%;' src='./assets/img/menu/MonMoi/".$row['HinhAnh']."' alt=''>
+                                        <img style='max-width: 100%;' src='./assets/img/menu/".$row['HinhAnh']."' alt=''>
                                         <div >" .$row['TenSP']."</div>
                                         <div class='d-flex justify-content-center' >
                                             <div>Size : " .$row['Size']."</div>
@@ -117,7 +117,7 @@
                         if ($loaimonmoi3) {
                             while ($row = $loaimonmoi3->fetch_assoc()) {
                             echo "<div class='col-12-col-md-12 col-lg-4 text-center' style='font-size: 2rem; color: #b81f32;'>
-                                        <img style='max-width: 100%;' src='./assets/img/menu/MonMoi/".$row['HinhAnh']."' alt=''>
+                                        <img style='max-width: 100%;' src='./assets/img/menu/".$row['HinhAnh']."' alt=''>
                                         <div >" .$row['TenSP']."</div>
                                         <div class='d-flex justify-content-center' >
                                             <div>Size : " .$row['Size']."</div>

@@ -9,7 +9,11 @@
 </head>
 
 <body>
-   <?php require("./header.php"); ?>
+<?php require("./header.php") ;
+         require("./config.php");
+        $sql="SELECT * FROM `sanpham` WHERE `sanpham`.`MaLMM` = 1";
+            $loaimonmoi =mysqli_query($conn,$sql);
+    ?>
     <div class="main">
         <!-- Slider -->
         <div class="main__slice">
@@ -43,103 +47,29 @@
                 <div class="tab-content">
                     <div class="tab-pane active">
                         <div class="row">
-                            <div class="col l-2 m-4 s-6">
-                                <div class="product">
-                                    <div class="product__avt" style="background-image: url(./assets/img/menu/TS_\ \(10\).png);">
-                                    </div>
-                                    <div class="product__info">
-                                        <h3 class="product__name text-center">Trà sữa olong</h3>
-                                        <div class="product__sale">
-                                            <span class="product__sale-percent">New</span>
+                        <?php
+                            if ($loaimonmoi) {
+                                while ($row = $loaimonmoi->fetch_assoc()) {
+                                echo "
+                                    <div class='col l-2 m-4 s-6'>
+                                        <div class='product'>
+                                            <div class='product__avt' style='background-image: url(./assets/img/menu/".$row['HinhAnh'].");'>
+                                            </div>
+                                            <div class='product__info'>
+                                                <h3 class='product__name text-center'>" .$row['TenSP']."</h3>
+                                                <div class='product__sale'>
+                                                    <span class='product__sale-percent'>New</span>
+                                                </div>
+                                            </div>
+                                            <a href='product.php' class='viewDetail'>Xem chi tiết</a>
+                                            <a href='cart.php' class='addToCart'>Thêm vào giỏ</a>
                                         </div>
-                                    </div>
-                                    <a href="product.php" class="viewDetail">Xem chi tiết</a>
-                                    <a href="cart.php" class="addToCart">Thêm vào giỏ</a>
-                                </div>
-                            </div>
-                            <div class="col l-2 m-4 s-6">
-                                <div class="product">
-                                    <div class="product__avt" style="background-image: url(./assets/img/menu/TS_\ \(11\).png);"></div>
-                                    <div class="product__info">
-                                        <h3 class="product__name text-center">Trà chanh</h3>
-                                        <div class="product__sale">
-                                            <span class="product__sale-percent">New</span>
-                                        </div>
-                                    </div>
-                                    <a href="product.php" class="viewDetail">Xem chi tiết</a>
-                                    <a href="cart.php" class="addToCart">Thêm vào giỏ</a>
-                                </div>
-                            </div>
-                            <div class="col l-2 m-4 s-6">
-                                <div class="product">
-                                    <div class="product__avt" style="background-image: url(./assets/img/menu/TS_\ \(12\).png);">
-                                    </div>
-                                    <div class="product__info">
-                                        <h3 class="product__name text-center">Trà chanh</h3>
-                                        <div class="product__sale">
-                                            <span class="product__sale-percent">New</span>
-                                        </div>
-                                    </div>
-                                    <a href="product.php" class="viewDetail">Xem chi tiết</a>
-                                    <a href="cart.html" class="addToCart">Thêm vào giỏ</a>
-                                </div>
-                            </div>
-                            <div class="col l-2 m-4 s-6">
-                                <div class="product">
-                                    <div class="product__avt" style="background-image: url(./assets/img/menu/TS_\ \(13\).png);">
-                                    </div>
-                                    <div class="product__info">
-                                        <h3 class="product__name text-center">Trà chanh</h3>
-                                        <div class="product__sale">
-                                            <span class="product__sale-percent">New</span>
-                                        </div>
-                                    </div>
-                                    <a href="product.php" class="viewDetail">Xem chi tiết</a>
-                                    <a href="cart.php" class="addToCart">Thêm vào giỏ</a>
-                                </div>
-                            </div>
-                            <div class="col l-2 m-4 s-6">
-                                <div class="product">
-                                    <div class="product__avt" style="background-image: url(./assets/img/menu/TS_\ \(14\).png);">
-                                    </div>
-                                    <div class="product__info">
-                                        <h3 class="product__name text-center">Trà chanh</h3>
-                                        <div class="product__sale">
-                                            <span class="product__sale-percent">New</span>
-                                        </div>
-                                    </div>
-                                    <a href="product.php" class="viewDetail">Xem chi tiết</a>
-                                    <a href="cart.php" class="addToCart">Thêm vào giỏ</a>
-                                </div>
-                            </div>
-                            <div class="col l-2 m-4 s-6">
-                                <div class="product">
-                                    <div class="product__avt" style="background-image: url(./assets/img/menu/TS_\ \(15\).png);">
-                                    </div>
-                                    <div class="product__info">
-                                        <h3 class="product__name text-center">Trà chanh</h3>
-                                        <div class="product__sale">
-                                            <span class="product__sale-percent">New</span>
-                                        </div>
-                                    </div>
-                                    <a href="product.php" class="viewDetail">Xem chi tiết</a>
-                                    <a href="cart.php" class="addToCart">Thêm vào giỏ</a>
-                                </div>
-                            </div>
-                            <div class="col l-2 m-4 s-6">
-                                <div class="product">
-                                    <div class="product__avt" style="background-image: url(./assets/img/menu/TS_\ \(16\).png);">
-                                    </div>
-                                    <div class="product__info">
-                                        <h3 class="product__name text-center">Trà chanh</h3>
-                                        <div class="product__sale">
-                                            <span class="product__sale-percent">New</span>
-                                        </div>
-                                    </div>
-                                    <a href="product.php" class="viewDetail">Xem chi tiết</a>
-                                    <a href="cart.php" class="addToCart">Thêm vào giỏ</a>
-                                </div>
-                            </div>
+                                    </div>";
+                                }
+                            } else echo " <tr>
+                                <td colspan='6' align='center'>Không có bản ghi nào hiển thị </td>
+                                        </tr>";
+                        ?>
                         </div>
                     </div>
                 </div>
