@@ -10,7 +10,17 @@
 </head>
 
 <body>
-    <?php require("./header.php") ?>
+<?php require("./header.php") ;
+         require("./config.php");
+        $sql="SELECT * FROM `sanpham` WHERE `sanpham`.`MaLTM` = 1";
+        $sql2="SELECT * FROM `sanpham` WHERE `sanpham`.`MaLTM` = 2";
+        $sql3="SELECT * FROM `sanpham` WHERE `sanpham`.`MaLTM` = 3";
+        $sql4="SELECT * FROM `sanpham` WHERE `sanpham`.`MaLTM` = 4";
+            $loatheomua =mysqli_query($conn,$sql);
+            $loatheomua1 =mysqli_query($conn,$sql2);
+            $loatheomua2 =mysqli_query($conn,$sql3);
+            $loatheomua3 =mysqli_query($conn,$sql4);
+    ?>
     <div class="main" style="padding-top: 17rem; background-color: #f5eee8;">
         <div class="">
             <div class="main__taskbar pb-4">
@@ -30,132 +40,48 @@
                 <div id="MUA_XUAN" style="background-color: #e5ded8; font-weight: bold; font-size: 2.5rem; padding: 1.5rem 0; text-align: center;">
                     MÙA XUÂN</div>
                 <div class="row">
-                    <div class="col-12-col-md-12 col-lg-4 text-center" style="font-size: 2rem; color: #b81f32;">
-                        <img style="max-width: 100%;" src="./assets/img/menu/TS_ (66).png" alt="">
-                        <div >Sữa Tươi Okinawa</div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : M</div>
-                            <div>-></div>
-                            <div>Giá : 20.000VNĐ</div>
-                        </div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : L</div>
-                            <div>-></div>
-                            <div>Giá : 25.000VNĐ</div>
-                        </div>
-                        <input type="submit" value="Đặt hàng" style="font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;"></input>
-                    </div>
-                    <div class="col-12-col-md-12 col-lg-4 text-center" style="font-size: 2rem; color: #b81f32;">
-                        <img style="max-width: 100%;" src="./assets/img/menu/TS_ (67).png" alt="">
-                        <div >Strawberry Earl Grey Latte</div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : M</div>
-                            <div>-></div>
-                            <div>Giá : 20.000VNĐ</div>
-                        </div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : L</div>
-                            <div>-></div>
-                            <div>Giá : 25.000VNĐ</div>
-                        </div>
-                        <input type="submit" value="Đặt hàng" style="font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;"></input>
-                    </div>
-                    <div class="col-12-col-md-12 col-lg-4 text-center" style="font-size: 2rem; color: #b81f32;">
-                        <img style="max-width: 100%;" src="./assets/img/menu/TS_ (20).png" alt="">
-                        <div >Mango Matcha Latte</div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : M</div>
-                            <div>-></div>
-                            <div>Giá : 20.000VNĐ</div>
-                        </div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : L</div>
-                            <div>-></div>
-                            <div>Giá : 25.000VNĐ</div>
-                        </div>
-                        <input type="submit" value="Đặt hàng" style="font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;"></input>
-                    </div>
-                    <div class="col-12-col-md-12 col-lg-4 text-center" style="font-size: 2rem; color: #b81f32;">
-                        <img style="max-width: 100%;" src="./assets/img/menu/TS_ (67).png" alt="">
-                        <div >Strawberry Earl Grey Latte</div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : M</div>
-                            <div>-></div>
-                            <div>Giá : 20.000VNĐ</div>
-                        </div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : L</div>
-                            <div>-></div>
-                            <div>Giá : 25.000VNĐ</div>
-                        </div>
-                        <input type="submit" value="Đặt hàng" style="font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;"></input>
-                    </div>
+                    <?php
+                        if ($loatheomua) {
+                            while ($row = $loatheomua->fetch_assoc()) {
+                            echo "<div class='col-12-col-md-12 col-lg-4 text-center' style='font-size: 2rem; color: #b81f32;'>
+                                        <img style='max-width: 100%;' src='./assets/img/menu/TheoMua/".$row['HinhAnh']."' alt=''>
+                                        <div >" .$row['TenSP']."</div>
+                                        <div class='d-flex justify-content-center' >
+                                            <div>Size : " .$row['Size']."</div>
+                                            <div>-></div>
+                                            <div>Giá : " .$row['DonGia']."</div>
+                                        </div>
+                                            <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                    </div>";
+                            }
+                        } else echo " <tr>
+                            <td colspan='6' align='center'>Không có bản ghi nào hiển thị </td>
+                                    </tr>";
+                    ?>
                 </div>
             </div>
             <div class="pt-5">
                 <div id="MUA_HA" style="background-color: #e5ded8; font-weight: bold; font-size: 2.5rem; padding: 1.5rem 0; text-align: center;">
                   MÙA HẠ</div>
                 <div class="row">
-                    <div class="col-12-col-md-12 col-lg-4 text-center" style="font-size: 2rem; color: #b81f32;">
-                        <img style="max-width: 100%;" src="./assets/img/menu/TS_ (66).png" alt="">
-                        <div >Sữa Tươi Okinawa</div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : M</div>
-                            <div>-></div>
-                            <div>Giá : 20.000VNĐ</div>
-                        </div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : L</div>
-                            <div>-></div>
-                            <div>Giá : 25.000VNĐ</div>
-                        </div>
-                        <input type="submit" value="Đặt hàng" style="font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;"></input>
-                    </div>
-                    <div class="col-12-col-md-12 col-lg-4 text-center" style="font-size: 2rem; color: #b81f32;">
-                        <img style="max-width: 100%;" src="./assets/img/menu/TS_ (67).png" alt="">
-                        <div >Strawberry Earl Grey Latte</div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : M</div>
-                            <div>-></div>
-                            <div>Giá : 20.000VNĐ</div>
-                        </div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : L</div>
-                            <div>-></div>
-                            <div>Giá : 25.000VNĐ</div>
-                        </div>
-                        <input type="submit" value="Đặt hàng" style="font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;"></input>
-                    </div>
-                    <div class="col-12-col-md-12 col-lg-4 text-center" style="font-size: 2rem; color: #b81f32;">
-                        <img style="max-width: 100%;" src="./assets/img/menu/TS_ (20).png" alt="">
-                        <div >Mango Matcha Latte</div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : M</div>
-                            <div>-></div>
-                            <div>Giá : 20.000VNĐ</div>
-                        </div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : L</div>
-                            <div>-></div>
-                            <div>Giá : 25.000VNĐ</div>
-                        </div>
-                        <input type="submit" value="Đặt hàng" style="font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;"></input>
-                    </div>
-                    <div class="col-12-col-md-12 col-lg-4 text-center" style="font-size: 2rem; color: #b81f32;">
-                        <img style="max-width: 100%;" src="./assets/img/menu/TS_ (67).png" alt="">
-                        <div >Strawberry Earl Grey Latte</div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : M</div>
-                            <div>-></div>
-                            <div>Giá : 20.000VNĐ</div>
-                        </div>
-                        <div class="d-flex justify-content-center" >
-                            <div>Size : L</div>
-                            <div>-></div>
-                            <div>Giá : 25.000VNĐ</div>
-                        </div>
-                        <input type="submit" value="Đặt hàng" style="font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;"></input>
-                    </div>
+                    <?php
+                        if ($loatheomua1) {
+                            while ($row = $loatheomua1->fetch_assoc()) {
+                            echo "<div class='col-12-col-md-12 col-lg-4 text-center' style='font-size: 2rem; color: #b81f32;'>
+                                        <img style='max-width: 100%;' src='./assets/img/menu/TheoMua/".$row['HinhAnh']."' alt=''>
+                                        <div >" .$row['TenSP']."</div>
+                                        <div class='d-flex justify-content-center' >
+                                            <div>Size : " .$row['Size']."</div>
+                                            <div>-></div>
+                                            <div>Giá : " .$row['DonGia']."</div>
+                                        </div>
+                                            <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                    </div>";
+                            }
+                        } else echo " <tr>
+                            <td colspan='6' align='center'>Không có bản ghi nào hiển thị </td>
+                                    </tr>";
+                    ?>
                 </div>
             </div>
         </div>
@@ -163,42 +89,48 @@
             <div id="MUA_THU" style="background-color: #e5ded8; font-weight: bold; font-size: 2.5rem; padding: 1.5rem 0; text-align: center;">
                 MÙA THU</div>
             <div class="row">
-                <div class="col-12-col-md-12 col-lg-4 text-center" style="font-size: 2rem; color: #b81f32;">
-                    <img style="max-width: 100%;" src="./assets/img/menu/TS_ (66).png" alt="">
-                    <div >Sữa Tươi Okinawa</div>
-                    <div class="d-flex justify-content-center" >
-                        <div>Size : M</div>
-                        <div>-></div>
-                        <div>Giá : 20.000VNĐ</div>
-                    </div>
-                    <div class="d-flex justify-content-center" >
-                        <div>Size : L</div>
-                        <div>-></div>
-                        <div>Giá : 25.000VNĐ</div>
-                    </div>
-                    <input type="submit" value="Đặt hàng" style="font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;"></input>
-                </div>
+                     <?php
+                        if ($loatheomua2) {
+                            while ($row = $loatheomua2->fetch_assoc()) {
+                            echo "<div class='col-12-col-md-12 col-lg-4 text-center' style='font-size: 2rem; color: #b81f32;'>
+                                        <img style='max-width: 100%;' src='./assets/img/menu/TheoMua/".$row['HinhAnh']."' alt=''>
+                                        <div >" .$row['TenSP']."</div>
+                                        <div class='d-flex justify-content-center' >
+                                            <div>Size : " .$row['Size']."</div>
+                                            <div>-></div>
+                                            <div>Giá : " .$row['DonGia']."</div>
+                                        </div>
+                                            <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                    </div>";
+                            }
+                        } else echo " <tr>
+                            <td colspan='6' align='center'>Không có bản ghi nào hiển thị </td>
+                                    </tr>";
+                    ?>
             </div>
         </div>
         <div class="pt-5 pb-5">
             <div id="MUA_DONG" style="background-color: #e5ded8; font-weight: bold; font-size: 2.5rem; padding: 1.5rem 0; text-align: center;">
                 MÙA ĐÔNG</div>
             <div class="row">
-                <div class="col-12-col-md-12 col-lg-4 text-center" style="font-size: 2rem; color: #b81f32;">
-                    <img style="max-width: 100%;" src="./assets/img/menu/TS_ (66).png" alt="">
-                    <div >Sữa Tươi Okinawa</div>
-                    <div class="d-flex justify-content-center" >
-                        <div>Size : M</div>
-                        <div>-></div>
-                        <div>Giá : 20.000VNĐ</div>
-                    </div>
-                    <div class="d-flex justify-content-center" >
-                        <div>Size : L</div>
-                        <div>-></div>
-                        <div>Giá : 25.000VNĐ</div>
-                    </div>
-                    <input type="submit" value="Đặt hàng" style="font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;"></input>
-                </div>
+                    <?php
+                        if ($loatheomua3) {
+                            while ($row = $loatheomua3->fetch_assoc()) {
+                            echo "<div class='col-12-col-md-12 col-lg-4 text-center' style='font-size: 2rem; color: #b81f32;'>
+                                        <img style='max-width: 100%;' src='./assets/img/menu/TheoMua/".$row['HinhAnh']."' alt=''>
+                                        <div >" .$row['TenSP']."</div>
+                                        <div class='d-flex justify-content-center' >
+                                            <div>Size : " .$row['Size']."</div>
+                                            <div>-></div>
+                                            <div>Giá : " .$row['DonGia']."</div>
+                                        </div>
+                                            <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                    </div>";
+                            }
+                        } else echo " <tr>
+                            <td colspan='6' align='center'>Không có bản ghi nào hiển thị </td>
+                                    </tr>";
+                    ?>
             </div>
         </div>
     </div>

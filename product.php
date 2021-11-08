@@ -57,7 +57,7 @@
                                             <div>-></div>
                                             <div>Giá : " .$row['DonGia']."</div>
                                         </div>
-                                            <input type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                        <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
                                     </div>";
                             }
                         } else echo " <tr>
@@ -81,7 +81,7 @@
                                             <div>-></div>
                                             <div>Giá : " .$row['DonGia']."</div>
                                         </div>
-                                            <input type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                        <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
                                     </div>";
                             }
                         } else echo " <tr>
@@ -106,7 +106,7 @@
                                             <div>-></div>
                                             <div>Giá : " .$row['DonGia']."</div>
                                         </div>
-                                            <input type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                        <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
                                     </div>";
                             }
                         } else echo " <tr>
@@ -130,7 +130,7 @@
                                             <div>-></div>
                                             <div>Giá : " .$row['DonGia']."</div>
                                         </div>
-                                            <input type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                        <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
                                     </div>";
                             }
                         } else echo " <tr>
@@ -154,7 +154,7 @@
                                             <div>-></div>
                                             <div>Giá : " .$row['DonGia']."</div>
                                         </div>
-                                            <input type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                        <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
                                     </div>";
                             }
                         } else echo " <tr>
@@ -178,7 +178,7 @@
                                             <div>-></div>
                                             <div>Giá : " .$row['DonGia']."</div>
                                         </div>
-                                            <input type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                        <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
                                     </div>";
                             }
                         } else echo " <tr>
@@ -202,7 +202,7 @@
                                             <div>-></div>
                                             <div>Giá : " .$row['DonGia']."</div>
                                         </div>
-                                            <input type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
+                                        <input class='btn text-white' type='submit' value='Đặt hàng' style='font-size: 2rem; background-color: #b81f32;margin-top: 1.2rem;'></input>
                                     </div>";
                             }
                         } else echo " <tr>
